@@ -3,9 +3,9 @@ import styled from "styled-components/native";
 import { StyleSheet } from "react-native";
 import { Card, Title } from "react-native-paper";
 
-const Name = styled.Text`
-  padding: 16px;
-  color: white;
+const LunchCardCover = styled(Card.Cover)`
+  padding: 15px;
+  background-color: white;
 `;
 
 export const LuncheonetteInfoCard = ({ luncheonette = {} }) => {
@@ -24,9 +24,8 @@ export const LuncheonetteInfoCard = ({ luncheonette = {} }) => {
   return (
     <>
       <Card elevation={5}>
-        <Card.Cover
+        <LunchCardCover
           key={name}
-          style={styles.cover}
           source={{
             uri: photos[0],
           }}
@@ -35,11 +34,6 @@ export const LuncheonetteInfoCard = ({ luncheonette = {} }) => {
           <Title>{name}</Title>
         </Card.Content>
       </Card>
-      <Name> Trying styled component</Name>
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  cover: { padding: 15, backgroundColor: "white" },
-});
